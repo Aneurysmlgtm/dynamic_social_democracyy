@@ -60,7 +60,7 @@ view-if: achievement_moly and ((difficulty == -1 and not dynamic_mode) or diffic
 subtitle: This may have inflationary effects.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 and not rubicon : [+ advisor_action_timer +] months before next advisor action. ?][? if advisor_action_timer > 0 and rubicon : [+ advisor_action_timer +] weeks before next emergency fundraising. ?]
-on-arrival: advisor_action_timer = 6; resources += 10; inflation += 1; data_miner_detected = 1; ip_grabber = 1
+on-arrival: advisor_action_timer = 1; resources += 10; inflation += 1; data_miner_detected = 1; ip_grabber = 1
 
 We have gained +10 resources.
 
@@ -82,7 +82,7 @@ title: Snap Election
 subtitle: Call a snap election.
 unavailable-subtitle: [? if chancellor != "Wels" and president != "Wels" : Wels must be Chancellor or President. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0 and (chancellor == "Wels" or president == "Wels")
-on-arrival: advisor_action_timer = 6; time_to_election = 3
+on-arrival: advisor_action_timer = 1; time_to_election = 3
 call: set_next_election_time
 
 We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
